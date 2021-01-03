@@ -8,26 +8,7 @@ to continue finding insights in what songs their users are listening to.
  Sparkify is a fictional popular digital media service created by Udacity, similar to Spotify or 
  Pandora; many users use their services every day.
  
- ### Prerequisites
-The environment needed for this project:
-1. [Python 3.6](https://www.python.org/downloads/release/python-360/)
-2. [configparser: Configuration file parser](https://docs.python.org/3/library/configparser.html)
-3. [Psycopg – PostgreSQL database adapter for Python](https://www.psycopg.org/docs/)
-4. [sql_query ](https://pypi.org/project/sql-queries/)
-
-### Explanation of the files in the repository
-1. **create_tables.py:** python code to drop (if exist) and  create fact and dimension tables for the star schema in Redshift.
-2. **etl.py:** python code to load data from S3 (json files) into staging tables on Redshift and then process that data into your analytics tables on Redshift.
-3. **sql_queries.py:** SQL statements, which will be imported into the two other files above. It has `DROP TABLE`, `CREATE TABLE`, `COPY` and `INSERT` statements.
-4. **dwh.cfg:** configuration file that contains data connections to: 
-    - Redshit cluster
-    - IAM_ROLE
-    - AWS S3  
-    Note: check the `Data Warehouse configurations and setup` section and read the file to replace with your own redshift 
-    cluster and IAM role. 
-5. **images:** folder that contains the images used in this file.
-
-### Data Warehouse configurations and setup
+ ### Set up for Redshift cluster
 1. Create an IAM Role
     - Go to [Amazon IAM console](https://console.aws.amazon.com/iam)
     - Choose Create role.
@@ -55,6 +36,27 @@ The environment needed for this project:
         - Available IAM roles: IAM Role just created
         - VPC security groups: security group created previously
     - choose Launch cluster.
+    
+ ### Prerequisites
+The environment needed for this project:
+1. [Python 3.6](https://www.python.org/downloads/release/python-360/)
+2. [configparser: Configuration file parser](https://docs.python.org/3/library/configparser.html)
+3. [Psycopg – PostgreSQL database adapter for Python](https://www.psycopg.org/docs/)
+4. [sql_query ](https://pypi.org/project/sql-queries/)
+5. Chek if you have a Redshift cluster, check `Set up for Redshift cluster` section
+
+### Explanation of the files in the repository
+1. **create_tables.py:** python code to drop (if exist) and  create fact and dimension tables for the star schema in Redshift.
+2. **etl.py:** python code to load data from S3 (json files) into staging tables on Redshift and then process that data into your analytics tables on Redshift.
+3. **sql_queries.py:** SQL statements, which will be imported into the two other files above. It has `DROP TABLE`, `CREATE TABLE`, `COPY` and `INSERT` statements.
+4. **dwh.cfg:** configuration file that contains data connections to: 
+    - Redshit cluster
+    - IAM_ROLE
+    - AWS S3  
+    Note: check the `Data Warehouse configurations and setup` section and read the file to replace with your own redshift 
+    cluster and IAM role. 
+5. **images:** folder that contains the images used in this file.
+
 
 ### Instructions to run the project
 1. clone the github repository: `git clone https://github.com/Erickramirez/Sparkify_Data_Warehouse.git`
